@@ -1,0 +1,11 @@
+- hosts: localhost
+  tasks:
+    - name: Prepare random postfix
+      set_fact:
+        rpfx: "{{ 100000 | random }}"
+      run_once: yes
+    - name: create Azure resource group
+      azure_rm_resourcegroup:
+        name: "test"
+        location: 'centralus'
+        state: present

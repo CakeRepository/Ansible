@@ -1,0 +1,14 @@
+---
+- name: Converge
+  hosts: all
+  vars_prompt:
+  - name: win_domain_admin_user
+    prompt: "What is the domain username?"
+    private: no
+
+  - name: win_domain_admin_password
+    prompt: "What is the domain password?"
+    unsafe: yes
+    private: yes
+  roles:
+    - role: server_decomission

@@ -1,0 +1,4 @@
+---
+# vars file for office_365
+tmp_path: c:\temp\o365
+o365_setup_url: https://ngfsstorage.blob.core.windows.net/tools/Office365/setup.exe

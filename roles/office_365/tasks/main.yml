@@ -1,0 +1,22 @@
+---
+# tasks file for office_365
+- name: Create directory structure
+  win_file:
+    path: "{{ tmp_path }}"
+    state: directory
+- name: Download XML file
+  win_get_url:
+    url: "{{ o365_config_url }}"
+    dest: "{{ tmp_path }}\\config.xml"
+    force: no
+- name: Download Office Setup file
+  win_get_url:
+    url: "{{ o365_setup_url }}"
+    dest: "{{ tmp_path }}\\setup.exe"
+    force: no
+- name: Install Office 365
+  win_package:
+    path: "{{ tmp_path }}\\setup.exe"
+    arguments: "/configure {{ tmp_path }}\\config.xml"
+    creates_path: "%programfiles%\\Microsoft Office\\root\\office16\\winword.exe"
+    state: present

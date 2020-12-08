@@ -1,0 +1,7 @@
+---
+# tasks file for Sophos
+- name: Disable Write filter
+  win_shell: uwfmgr filter disable
+- name: Reboot to disable write filter
+  win_reboot:
+

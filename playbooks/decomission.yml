@@ -1,0 +1,32 @@
+- hosts: Windows
+  vars_prompt:
+  - name: username
+    prompt: "What is the computer username?"
+    private: no
+
+  - name: password
+    prompt: "What is the computer password?"
+    unsafe: yes
+    private: yes
+    
+  - name: win_domain_admin_user
+    prompt: "What is the domain username?"
+    private: no
+
+  - name: win_domain_admin_password
+    prompt: "What is the domain password?"
+    unsafe: yes
+    private: yes
+
+
+  vars:
+    ansible_connection: winrm
+    ansible_port: 5986
+    ansible_winrm_scheme: https
+    ansible_winrm_transport: ntlm
+    ansible_winrm_server_cert_validation: ignore
+    ansible_user: "{{ username }}"
+    ansible_password: "{{ password }}"
+
+  roles:
+      - server_decomission

@@ -1,0 +1,4 @@
+---
+# tasks file for Windows_Ping
+- name: Windows Ping
+  win_ping:

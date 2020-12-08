@@ -1,0 +1,10 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+      #RDP_Generator vars
+    rdp_gateway: secure.netgainhosting.com
+    rdp_hostname: office.netgainhosting.com
+    rdp_domain: netgainhosting\
+  roles:
+    - role: rdp-generator

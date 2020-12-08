@@ -1,0 +1,21 @@
+- hosts: all
+  vars_prompt:
+  - name: username
+    prompt: "What is the computer username?"
+    private: no
+
+  - name: password
+    prompt: "What is the computer password?"
+    unsafe: yes
+    private: yes
+
+  vars:
+    ansible_connection: winrm
+    ansible_port: 5986
+    ansible_winrm_transport: ntlm
+    ansible_winrm_server_cert_validation: ignore
+    ansible_user: "{{ username }}"
+    ansible_password: "{{ password }}"
+
+  roles:
+      - Windows_Ping

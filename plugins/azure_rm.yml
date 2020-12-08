@@ -1,0 +1,19 @@
+# https://docs.ansible.com/ansible/latest/plugins/inventory/azure_rm.html
+auth_source: auto
+plugin: azure_rm
+include_vm_resource_groups:
+- '*'
+  # - "{{ azure_resource_groups }}"
+# fetches VMs from VMSSs in all resource groups (defaults to no VMSS fetch)
+include_vmss_resource_groups:
+- '*'
+conditional_groups:
+  all_the_hosts: true
+
+# adds variables to each host found by this inventory plugin, whose values are the result of the associated expression
+hostvar_expressions:
+  ansible_host: private_ipv4_addresses
+
+exclude_host_filters:
+# excludes hosts that are powered off
+- powerstate != 'running'

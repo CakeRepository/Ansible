@@ -1,0 +1,19 @@
+---
+# tasks file for server_decomission
+- name: Ensure user Netgain_adm is present
+  win_user:
+    name: '{{ winlocaluser }}'
+    password: '{{ winlocalpassword }}'
+    state: present
+    groups:
+      - Administrators
+- name: Joins Workgroup
+  win_domain_membership:
+    workgroup_name: decomission
+    domain_admin_user: '{{ win_domain_admin_user }}'
+    domain_admin_password: '{{ win_domain_admin_password }}'
+    state: workgroup
+  register: domain_state
+- name: Reboot if changed
+  win_reboot:
+  when: domain_state.reboot_required
