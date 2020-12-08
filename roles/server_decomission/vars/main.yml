@@ -1,4 +1,4 @@
 ---
 # vars file for server_decomission
-winlocaluser: netgain_admin
+winlocaluser: admadm_admin
 winlocalpassword: PleaseD3leteM3!

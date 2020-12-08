@@ -3,8 +3,8 @@
   hosts: all
   vars:
       #RDP_Generator vars
-    rdp_gateway: secure.netgainhosting.com
-    rdp_hostname: office.netgainhosting.com
-    rdp_domain: netgainhosting\
+    rdp_gateway: 
+    rdp_hostname: 
+    rdp_domain: 
   roles:
     - role: rdp-generator
