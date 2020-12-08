@@ -1,7 +1,5 @@
 # Ansible
-
-[![CircleCI](https://circleci.com/gh/netgaintechnology/ansible.svg?style=svg)](https://circleci.com/gh/netgaintechnology/ansible)
+The start of opensource goodness
 
 ## Linting rules
-
-<https://docs.ansible.com/ansible-lint/rules/default_rules.html>
+Will work on this
