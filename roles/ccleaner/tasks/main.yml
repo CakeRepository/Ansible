@@ -1,7 +1,0 @@
----
-# tasks file for CCleaner
-- name: Run CCleaner from weburl
-  win_package:
-    path: 
-    arguments: /AUTO
-    state: present

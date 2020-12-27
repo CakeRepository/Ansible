@@ -1,6 +1,6 @@
 ---
 # tasks file for server_decomission
-- name: Ensure user Netgain_adm is present
+- name: Ensure user Admin Userr is present
   win_user:
     name: '{{ winlocaluser }}'
     password: '{{ winlocalpassword }}'

@@ -1,7 +1,0 @@
----
-- name: Converge
-  hosts: all
-  vars:
-    o365_config_url: 
-  roles:
-    - role: office_365
